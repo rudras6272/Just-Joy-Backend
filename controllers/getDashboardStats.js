@@ -3,6 +3,7 @@ const Booking = require('../Models/booking');
 const getDashboardStats = async(req , res) =>{
     try {
         const totalBookings = await Booking.countDocuments();
+        const today = new Date();
         today.setHours(0, 0, 0, 0);
 
         const tomorrow = new Date(today);
