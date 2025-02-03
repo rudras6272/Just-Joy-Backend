@@ -3,9 +3,11 @@ const Booking  = require('../Models/booking') ;
 
 
 const addBooking = async(req , res) =>{
-    const {checkIn , checkOut , adults , children} = req.body ; 
+    const {name , email , checkIn , checkOut , adults , children} = req.body ; 
     try {
         const newBooking = await Booking.create({
+            name ,
+            email ,
             checkIn , 
             checkOut , 
             adults , 
