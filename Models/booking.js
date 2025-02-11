@@ -23,6 +23,14 @@ const bookingSchema = new mongoose.Schema({
     },
     children : {
         type : Number
+    },
+    totalAmount : {
+        type : Number
+    },
+    status : {
+        type : String ,
+        enum : ['Pending' , 'Confirmed' , 'Cancelled'],
+        default : 'Pending'
     }
 })
 
