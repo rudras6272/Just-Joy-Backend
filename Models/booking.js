@@ -32,7 +32,7 @@ const bookingSchema = new mongoose.Schema({
         enum : ['Pending' , 'Confirmed' , 'Cancelled'],
         default : 'Pending'
     }
-})
+} , {timestamps : true})
 
 const Book = mongoose.model('newBooking' , bookingSchema) ; 
 module.exports = Book ; 
