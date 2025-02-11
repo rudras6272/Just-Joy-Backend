@@ -13,11 +13,21 @@ const getDashboardStats = async(req , res) =>{
           createdAt: { $gte: today, $lt: tomorrow }
         });
 
+        const pendingBookings = await Booking.countDocuments({
+          status : 'Pending' 
+        });
+
+        const confirmedBookings = await Booking.countDocuments({
+          status : 'Confirmed'
+        }) ;
+
         res.status(200).json({
           totalBookings,
-          todayBookings
+          todayBookings,
+          pendingBookings,
+          confirmedBookings,
         });
-        
+
     } catch (error) {
         res.status(500).json({message : error.message}) ;
     }
