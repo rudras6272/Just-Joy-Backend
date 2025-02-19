@@ -5,6 +5,9 @@ const cors = require('cors') ;
 
 const app = express() ; 
 require('dotenv').config({path : './.env'}) ; 
+import { injectSpeedInsights } from '@vercel/speed-insights';
+ 
+injectSpeedInsights();
 
 const PORT = process.env.PORT || 5000 ; 
 app.use(express.json()) ; 
