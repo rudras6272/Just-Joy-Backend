@@ -17,13 +17,6 @@ const bookingSchema = new mongoose.Schema({
         type : Date , 
         required : true 
     } ,
-    adults : {
-        type : Number , 
-        required : true , 
-    },
-    children : {
-        type : Number
-    },
     totalAmount : {
         type : Number
     },
@@ -31,6 +24,13 @@ const bookingSchema = new mongoose.Schema({
         type : String ,
         enum : ['Pending' , 'Confirmed' , 'Cancelled'],
         default : 'Pending'
+    },
+    message : {
+        type : String 
+    },
+    guests: {
+        type : String , 
+        required : true
     }
 } , {timestamps : true})
 
