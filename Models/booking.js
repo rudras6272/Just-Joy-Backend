@@ -31,7 +31,11 @@ const bookingSchema = new mongoose.Schema({
     guests: {
         type : String , 
         required : true
-    }
+    },
+    phone: {
+        type : String , 
+        required : true
+    } 
 } , {timestamps : true})
 
 const Book = mongoose.model('newBooking' , bookingSchema) ; 
